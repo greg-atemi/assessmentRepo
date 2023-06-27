@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
         body();
     }
-    
+
     public static void body() {
         try {
             Scanner myScanner = new Scanner(System.in);
@@ -17,21 +17,27 @@ public class Main {
             System.out.println("Input list length");
             listlength = Integer.parseInt(myScanner.nextLine());
 
-            //List creation with the length set to the user input
-            List<Integer> thelist=new ArrayList<Integer>(listlength);
+            //Checking if the list length is less than 1
+            if(listlength>=1){
+                //List creation with the length set to the user input
+                List<Integer> thelist=new ArrayList<Integer>(listlength);
 
-            //Loop used to enable user to input the numbers
-            for(x=1;x<=listlength;x++){
-                System.out.println("Input list item");
-                item = Integer.parseInt(myScanner.nextLine());
-                thelist.add(item);
+                //Loop used to enable user to input the numbers
+                for(x=1;x<=listlength;x++){
+                    System.out.println("Input list item");
+                    item = Integer.parseInt(myScanner.nextLine());
+                    thelist.add(item);
+                }
+
+                //Sorting the list
+                Collections.sort(thelist);
+                diff = (thelist.get(thelist.size()-1)) - thelist.get(0);
+                System.out.println("Maximum difference = "+diff);
             }
-
-            //Sorting the list
-            Collections.sort(thelist);
-            diff = (thelist.get(thelist.size()-1)) - thelist.get(0);
-            System.out.println("Maximum difference = "+diff);
-
+            else{
+                System.out.println("Invalid input, please input an integer greater than 1");
+                body();
+            }
     }
         //Catching the Number format exception
         catch (NumberFormatException e) {
