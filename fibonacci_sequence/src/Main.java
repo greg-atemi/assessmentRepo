@@ -16,6 +16,13 @@ public class Main {
             int num1 = 0, num2 = 1, num3, x, limit;
             System.out.println("Input number");
             limit = Integer.parseInt(myScanner.nextLine());
+
+            //Exception handling for the zero or negative integer input case
+            if(limit <= 0){
+                System.out.println("Please input a positive integer");
+                body();
+            }
+
             System.out.print(num1+" "+num2);
             for(x=2; x<limit; x++){
                 num3=num1+num2;
