@@ -1,7 +1,7 @@
 //importing Scanner class
 import java.util.Scanner;
 
-public class Main {
+public class Fibonacci {
     public static void main(String[] args) {
         //Declaration of body function
         body();
